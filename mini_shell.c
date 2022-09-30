@@ -7,9 +7,9 @@
 #include <string.h> 
 #define TRUE 1
 #define MAX 200
-void command(char command[MAX],char *argumento[20]){
+void command(char command[MAX],char *argumento[30]){
   argumento[0]=strtok(command,"\0");
-  for (int i=0;i<20;i++){
+  for (int i=0;i<30;i++){
     strtok(NULL,"\0");
   }
 }
@@ -18,7 +18,7 @@ void command(char command[MAX],char *argumento[20]){
 int main(){
   int status;
   char promt[MAX];
-  char *argumento[20];
+  char *argumento[30];
   while(TRUE){
     printf("\nDigite o comando a ser soliciatado:      \t");
     if (fgets(promt, strlen(promt), stdin) ==           NULL) {
