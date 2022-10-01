@@ -21,10 +21,11 @@ int main(){
   char *argumento[30];
   while(TRUE){
     printf("\nDigite o comando a ser soliciatado:      \t");
-    if (fgets(promt, strlen(promt), stdin) ==           NULL) {
+    if (fgets(promt, sizeof(promt)-1, stdin) ==           NULL) {
       printf("error");
       }else{
         promt[strcspn(promt, "\n")] = 0;
+        fflush(stdin);
         command(promt,argumento);
         if (fork()!=0){
           waitpid(-1,&status,0);
